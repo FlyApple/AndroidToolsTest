@@ -1,2 +1,2 @@
 # AndroidToolsTest
-Add support SDK 33, Vibration
+Add support SDK 33, Vibration Test

@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    seekBarAmplitude.setEnabled(true);
                     checkBoxObsoleteType.setEnabled(false);
                     radioGroupVibrationType.setEnabled(true);
                     for (int i = 0; i < radioGroupVibrationType.getChildCount(); i++) {
