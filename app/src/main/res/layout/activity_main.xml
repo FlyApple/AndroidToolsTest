@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/vibrationParametersLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibration Parameters"
+        android:textSize="16sp"
+        android:enabled="true"/>
+    <SeekBar
+        android:id="@+id/seekBarAmplitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progress="255"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tvAmplitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amplitude 255"
+        android:layout_gravity="center_horizontal" />
+
+
+    <SeekBar
+        android:id="@+id/seekBarDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10" />
+
+    <TextView
+        android:id="@+id/tvDurationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.10 second"
+        android:layout_gravity="center_horizontal" />
+
+    <CheckBox
+        android:id="@+id/checkBoxObsoleteType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obsolete Vibration"
+        android:checked="false"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxLegacyType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Legacy Vibration"
+        android:checked="false"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupVibrationType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true">
+
+        <TextView
+            android:id="@+id/radioGroupVibrationDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vibration (Supported SDK 33)"
+            android:textSize="16sp"
+            android:enabled="true"/>
+
+        <RadioButton
+            android:id="@+id/radioAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ALARM" />
+
+        <RadioButton
+            android:id="@+id/radioRingtone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RINGTONE"
+            android:checked="true"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvDeviceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test ..."
+        android:layout_gravity="left" />
+
+    <Button
+        android:id="@+id/btnVibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Vibrate"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
