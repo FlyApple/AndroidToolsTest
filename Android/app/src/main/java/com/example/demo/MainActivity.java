@@ -74,10 +74,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 int amplitude = progress;
-                if(amplitude < 10) {
-                    amplitude = 10;
-                }
                 String amplitudeText = String.format("Amplitude %d", amplitude);
+                if(amplitude == 0) {
+                    amplitudeText = String.format("Amplitude Click", amplitude);
+                } else if(amplitude == 1) {
+                    amplitudeText = String.format("Amplitude Double Click", amplitude);
+                } else if(amplitude == 2) {
+                    amplitudeText = String.format("Amplitude Tick", amplitude);
+                } else if(amplitude == 5) {
+                    amplitudeText = String.format("Amplitude Heavy Tick", amplitude);
+                } else if(amplitude == 255) {
+                    amplitudeText = String.format("Amplitude (default)", amplitude);
+                }
+
                 tvAmplitudeLabel.setText(amplitudeText);
             }
 
@@ -130,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 int milliseconds = seekBarDuration.getProgress() * 10;  // 将进度值映射到 0.01 到 1 秒之间
                 int amplitude = seekBarAmplitude.getProgress();
                 if(milliseconds < 10) { milliseconds = 10; }
-                if(amplitude < 10) { amplitude = 10; }
-                else if(amplitude >= 255) { amplitude = 0; }
+                else if(amplitude >= 255) { amplitude = -1; }
 
                 boolean alarm = false;
                 int selectedId = radioGroupVibrationType.getCheckedRadioButtonId();
@@ -170,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(Build.VERSION.SDK_INT >= 26 && vibrator.hasAmplitudeControl() && !obsolete) {
-            if(amplitude == 0) {
+            if(amplitude < 0) {
                 amplitude = VibrationEffect.DEFAULT_AMPLITUDE;
             }
 
