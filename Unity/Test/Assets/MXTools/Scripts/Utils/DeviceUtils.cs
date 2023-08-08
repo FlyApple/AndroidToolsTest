@@ -16,23 +16,32 @@ namespace DeviceUtils
         public static AndroidJavaClass context = new AndroidJavaClass("android.content.Context");
         public static AndroidJavaObject activity = unity_player.GetStatic<AndroidJavaObject>("currentActivity");
         private static AndroidJavaClass version = new AndroidJavaClass("android.os.Build$VERSION");
+#endif
         public static int SDK_INT
         {
             get
             {
+#if UNITY_ANDROID && !UNITY_EDITOR
                 int sdk = Device.version.GetStatic<int>("SDK_INT");
                 return sdk;
+#else
+                return 0;
+#endif
             }
         }
         public static string RELEASE
         {
             get
             {
+#if UNITY_ANDROID && !UNITY_EDITOR
                 string release = Device.version.GetStatic<string>("RELEASE");
-                return release;
+                return "Android " + release;
+#else
+                return "Unknow";
+#endif
             }
         }
-#endif
+
     }
 
     

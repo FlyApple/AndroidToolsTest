@@ -17,5 +17,8 @@ Android/local.properties
 Unity/Test/Logs
 Unity/Test/obj
 Unity/Test/Library
+Unity/Test/Temp
 Unity/Test/.vs
+Unity/Test/.vsconfig
 Unity/Test/*.sln
+Unity/Test/*.apk
