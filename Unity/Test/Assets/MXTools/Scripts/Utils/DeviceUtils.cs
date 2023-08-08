@@ -35,7 +35,7 @@ namespace DeviceUtils
             {
 #if UNITY_ANDROID && !UNITY_EDITOR
                 string release = Device.version.GetStatic<string>("RELEASE");
-                return "Android " + release;
+                return release;
 #else
                 return "Unknow";
 #endif

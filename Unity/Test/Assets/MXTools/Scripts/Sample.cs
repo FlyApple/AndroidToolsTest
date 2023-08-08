@@ -117,7 +117,7 @@ public class Sample : MonoBehaviour
         {
             seconds = 0.01f;
         }
-        int milliseconds = Mathf.RoundToInt(seconds * 100.0f);
+        int milliseconds = Mathf.RoundToInt(seconds * 1000.0f);
 
         this._label_desc.text = string.Format("Device SDK {0:D} Android {1}. milliseconds {2:D}, amplitude {3:D}",
         DeviceUtils.Device.SDK_INT, DeviceUtils.Device.RELEASE,
