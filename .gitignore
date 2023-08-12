@@ -19,6 +19,7 @@ Unity/Test/obj
 Unity/Test/Library
 Unity/Test/Temp
 Unity/Test/mxtools_test_BurstDebugInformation_DoNotShip
+Unity/Test/Packages/com.unity.asset-store-tools
 Unity/Test/.vs
 Unity/Test/.vsconfig
 Unity/Test/*.sln
